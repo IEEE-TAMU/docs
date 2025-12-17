@@ -1,10 +1,19 @@
+---
+sidebar_position: 0
+---
+
 # Infrastructure Overview
 
-This section documents the technical infrastructure of IEEE TAMU.
+This section documents the foundational technical infrastructure of IEEE TAMU—the hardware, platforms, and core services that power our applications.
 
 ## Components
 
-- **[Cloudflare](./cloudflare/dns.md)**: DNS, Email Routing, and Workers.
-- **[Hardware](./hardware/nixos-cluster.md)**: Physical NixOS cluster on campus.
-- **[Kubernetes](./kubernetes/cluster-setup.md)**: Cluster configuration and infrastructure services.
-- **[Applications](./apps/homepage.md)**: User-facing applications and services.
+- **[Cloudflare](./cloudflare/dns.md)**: DNS configuration for our domains.
+- **[Hardware](./hardware/nixos-cluster.md)**: Physical NixOS cluster hosted on campus.
+- **[Kubernetes](./kubernetes/cluster-setup.md)**: Cluster configuration and infrastructure services (Traefik, MariaDB, etc.).
+
+## Related Sections
+
+- **[Internal Services](../internal-services/intro.md)**: User-facing applications and Cloudflare Workers built by IEEE TAMU.
+- **[External Services](../external-services/intro.md)**: Third-party services we integrate with (Brevo, Flywire, Discord, etc.).
+- **[Example Flows](../flows/intro.md)**: End-to-end documentation of how services interact.

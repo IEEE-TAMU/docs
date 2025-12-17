@@ -23,7 +23,7 @@ The Portal serves as the **single source of truth** for all organization events.
 ### Member Management
 *   **Database**: Stores comprehensive member information.
 *   **Resume Bank**: Members can upload resumes, which are stored in Cloudflare R2.
-*   **Dues Tracking**: Automatically updates payment status via webhooks from the [Marketplace Handler](../cloudflare/marketplace-handler.md).
+*   **Dues Tracking**: Automatically updates payment status via webhooks from the [Marketplace Handler](../workers/marketplace-handler.md).
 
 ### Administration
 Officers have access to a suite of admin tools:
@@ -34,5 +34,5 @@ Officers have access to a suite of admin tools:
 ## Deployment
 
 The application is deployed on the Kubernetes cluster.
-*   **Database**: Connects to a dedicated MariaDB instance provisioned by the [MariaDB Operator](../kubernetes/infra-services/mariadb.md).
+*   **Database**: Connects to a dedicated MariaDB instance provisioned by the [MariaDB Operator](../../infrastructure/kubernetes/infra-services/mariadb.md).
 *   **Ingress**: Exposed via Traefik at `portal.ieeetamu.org`.

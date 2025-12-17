@@ -85,6 +85,18 @@ const config: Config = {
           label: 'External Services',
         },
         {
+          type: 'docSidebar',
+          sidebarId: 'internalServicesSidebar',
+          position: 'left',
+          label: 'Internal Services',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'flowsSidebar',
+          position: 'left',
+          label: 'Example Flows',
+        },
+        {
           href: 'https://github.com/IEEE-TAMU/docs',
           label: 'GitHub',
           position: 'right',
@@ -100,6 +112,18 @@ const config: Config = {
             {
               label: 'Infrastructure',
               to: '/docs/infrastructure/intro',
+            },
+            {
+              label: 'External Services',
+              to: '/docs/external-services/intro',
+            },
+            {
+              label: 'Internal Services',
+              to: '/docs/internal-services/intro',
+            },
+            {
+              label: 'Example Flows',
+              to: '/docs/flows/intro',
             },
           ],
         },

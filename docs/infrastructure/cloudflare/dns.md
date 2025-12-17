@@ -18,7 +18,7 @@ Traffic to the root domain and subdomains is routed through a [Cloudflare Tunnel
 
 ### Email Routing (Inbound)
 
-Inbound emails to `@ieeetamu.org` are handled by Cloudflare [Email Routing](./email-routing.md).
+Inbound emails to `@ieeetamu.org` are handled by the [Email Routing Worker](../../internal-services/workers/email-routing.md).
 
 | Type | Name | Content | Notes |
 |---|---|---|---|
