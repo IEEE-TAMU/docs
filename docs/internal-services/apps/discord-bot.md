@@ -2,8 +2,7 @@
 
 Our custom Discord bot for the IEEE TAMU server.
 
-- **Bot Repository:** [https://github.com/IEEE-TAMU/discord](https://github.com/IEEE-TAMU/discord)
-- **Deployment Repository:** [https://github.com/IEEE-TAMU/cluster-infra/tree/master/apps/discord-bot](https://github.com/IEEE-TAMU/cluster-infra/tree/master/apps/discord-bot)
+<ServiceLinks repo="discord" deploymentPaths={['apps/discord-bot']} />
 
 ## Features
 

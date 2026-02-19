@@ -2,9 +2,7 @@
 
 The Member Portal is the central hub for IEEE TAMU operations, handling member management, event scheduling, and administrative tasks.
 
-- **App Repository:** [https://github.com/IEEE-TAMU/portal](https://github.com/IEEE-TAMU/portal)
-- **Deployment Repository:** [https://github.com/IEEE-TAMU/cluster-infra/tree/master/apps/portal](https://github.com/IEEE-TAMU/cluster-infra/tree/master/apps/portal)
-- **URL:** [https://portal.ieeetamu.org](https://portal.ieeetamu.org)
+<ServiceLinks repo="portal" deploymentPaths={['apps/portal']} url="https://portal.ieeetamu.org" />
 
 ## Technology Stack
 

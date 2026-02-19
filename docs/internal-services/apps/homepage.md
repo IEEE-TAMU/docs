@@ -1,8 +1,8 @@
 # Homepage
 
-The main website for IEEE TAMU, located at [ieeetamu.org](https://ieeetamu.org).
+The main website for IEEE TAMU.
 
-- **Repository:** [https://github.com/IEEE-TAMU/homepage](https://github.com/IEEE-TAMU/homepage)
+<ServiceLinks repo="homepage" url="https://ieeetamu.org" />
 
 It is a static Next.js site featuring:
 - Simple information about the organization
