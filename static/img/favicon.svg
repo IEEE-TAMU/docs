@@ -1,7 +1,11 @@
-<svg width="200" height="200" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+<svg width="500" height="500" xmlns="http://www.w3.org/2000/svg">
   <style>
     circle { fill: #500000; }
     polygon { fill: white; }
+    @media (prefers-color-scheme: dark) { 
+      circle { fill: #500000; } 
+      polygon { fill: white; } 
+    }
   </style>
   <circle cx="250" cy="250" r="250"/>
   <polygon points="325,100 175,250 225,250"/>
