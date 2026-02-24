@@ -2,8 +2,7 @@
 
 We use the MariaDB Operator to manage MariaDB database instances for our applications running on the cluster. This provides a Kubernetes-native way to provision and manage databases.
 
-- **Operator Repository:** [https://github.com/IEEE-TAMU/cluster-infra/tree/master/infra/mariadb-operator](https://github.com/IEEE-TAMU/cluster-infra/tree/master/infra/mariadb-operator)
-- **Database Repository:** [https://github.com/IEEE-TAMU/cluster-infra/tree/master/infra/mariadb](https://github.com/IEEE-TAMU/cluster-infra/tree/master/infra/mariadb)
+<ServiceLinks deploymentPaths={['infra/mariadb-operator', 'infra/mariadb']} />
 
 ## Overview
 

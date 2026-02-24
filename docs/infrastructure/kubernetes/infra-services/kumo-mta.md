@@ -2,7 +2,7 @@
 
 Kumo MTA is used to handle outbound emails from applications running on the cluster.
 
-- **Repository:** [https://github.com/IEEE-TAMU/cluster-infra/tree/master/infra/email](https://github.com/IEEE-TAMU/cluster-infra/tree/master/infra/email)
+<ServiceLinks deploymentPaths={['infra/email']} />
 
 ## Overview
 
