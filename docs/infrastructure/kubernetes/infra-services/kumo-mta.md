@@ -33,6 +33,6 @@ The configuration is managed via a ConfigMap (`kumo-policy`) which defines the L
 
 ## DNS Configuration
 
-To ensure email deliverability, we use DKIM signing. The public key is published in the DNS record `cluster._domainkey.ieeetamu.org`.
+To ensure email deliverability, we use DKIM signing. The public key is published in DNS under the `cluster` selector. DNS records are managed in the [infra repo](https://github.com/IEEE-TAMU/infra).
 
-See [DNS Configuration](../../cloudflare/dns.md#cluster-email-kumo-mta) for more details.
+See [DNS Configuration](../../cloudflare/dns.md) for an overview.

@@ -30,4 +30,6 @@ The tunnel is configured to route all traffic for `ieeetamu.org` and its subdoma
 
 ## DNS Setup
 
-In the Cloudflare dashboard, `ieeetamu.org` and `*.ieeetamu.org` are configured as CNAME records pointing to the tunnel's UUID address (e.g., `...cfargotunnel.com`). See [DNS Configuration](../../cloudflare/dns.md#web-traffic-ingress) for more details.
+In the Cloudflare dashboard, `ieeetamu.org` and `*.ieeetamu.org` are configured as CNAME records pointing to the tunnel's UUID address (e.g., `...cfargotunnel.com`). DNS records are managed via Terraform/OpenTofu in the [infra repo](https://github.com/IEEE-TAMU/infra).
+
+See [DNS Configuration](../../cloudflare/dns.md) for an overview.

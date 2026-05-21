@@ -1,64 +1,22 @@
 # DNS Configuration
 
-We manage DNS for the following domains using Cloudflare:
+DNS for `ieeetamu.org` is managed via Terraform/OpenTofu in the [infra](https://github.com/IEEE-TAMU/infra) repository.
 
-- `ieeetamu.org` (Primary domain)
-- `ieee-tamu.org` (Legacy domain)
+## Overview
 
-## `ieeetamu.org` Records
+All DNS records are defined as code in the infra repo. This includes:
 
-### Web Traffic (Ingress)
+- **Web Traffic**: CNAME records pointing to the [Cloudflare Tunnel](../kubernetes/infra-services/cloudflare-tunnel.md)
+- **Email Routing**: MX records for inbound email via Cloudflare Email Routing
+- **Transactional Email**: SPF/DKIM records for [Brevo](../../external-services/brevo.md)
+- **Bulk Email**: SPF/DKIM records for [Mautic](../../internal-services/apps/mautic.md)
+- **Cluster Email**: DKIM records for [Kumo MTA](../kubernetes/infra-services/kumo-mta.md)
+- **Storage**: CNAME records for Cloudflare R2 buckets
 
-Traffic to the root domain and subdomains is routed through a [Cloudflare Tunnel](../kubernetes/infra-services/cloudflare-tunnel.md) running on our Kubernetes cluster.
+## Making Changes
 
-| Type | Name | Content | Notes |
-|Data|---|---|---|
-| CNAME | `ieeetamu.org` | `...cfargotunnel.com` | Proxied through Cloudflare |
-| CNAME | `*.ieeetamu.org` | `...cfargotunnel.com` | Wildcard for subdomains |
+1. Edit the Terraform/OpenTofu configuration in the [infra repo](https://github.com/IEEE-TAMU/infra)
+2. Submit a PR for review
+3. Apply changes via the CI/CD pipeline
 
-### Email Routing (Inbound)
-
-Inbound emails to `@ieeetamu.org` are handled by the [Email Routing Worker](../../internal-services/workers/email-routing.md).
-
-| Type | Name | Content | Notes |
-|---|---|---|---|
-| MX | `ieeetamu.org` | `route1.mx.cloudflare.net` | Priority 66 |
-| MX | `ieeetamu.org` | `route2.mx.cloudflare.net` | Priority 6 |
-| MX | `ieeetamu.org` | `route3.mx.cloudflare.net` | Priority 22 |
-| TXT | `ieeetamu.org` | `v=spf1 ... include:_spf.mx.cloudflare.net ... ~all` | SPF Record |
-
-### Transactional Email (Brevo)
-
-We use [Brevo](../../external-services/brevo.md) for transactional emails.
-
-| Type | Name | Content | Notes |
-|---|---|---|---|
-| MX | `brevomail.ieeetamu.org` | `smtp-relay.brevo.com` | |
-| CNAME | `brevo1._domainkey` | `b1.ieeetamu-org.dkim.brevo.com` | DKIM |
-| CNAME | `brevo2._domainkey` | `b2.ieeetamu-org.dkim.brevo.com` | DKIM |
-| TXT | `ieeetamu.org` | `... include:spf.brevo.com ...` | SPF Include |
-| TXT | `ieeetamu.org` | `brevo-code:2dc0ae653fb0b83da1c2232ebdcfc6db` | Verification Code |
-
-### Cluster Email (Kumo MTA)
-
-Outbound emails from the cluster (via [Kumo MTA](../kubernetes/infra-services/kumo-mta.md)) are signed with DKIM.
-
-| Type | Name | Content | Notes |
-|---|---|---|---|
-| TXT | `cluster._domainkey` | `v=DKIM1; k=rsa; ...` | DKIM Public Key |
-
-### Storage (R2)
-
-| Type | Name | Content | Notes |
-|---|---|---|---|
-| CNAME | `officer-photos` | `public.r2.dev` | Cloudflare R2 Bucket |
-
-### Other / Legacy
-
-| Type | Name | Content | Notes |
-|---|---|---|---|
-| CNAME | `k2._domainkey` | `dkim2.mcsv.net` | Mailchimp DKIM (Legacy) |
-| CNAME | `k3._domainkey` | `dkim3.mcsv.net` | Mailchimp DKIM (Legacy) |
-| CNAME | `jgkp847n7ytzrdnh8aw4` | `verify.squarespace.com` | Squarespace Verification |
-| TXT | `default._bimi` | `v=BIMI1; ...` | Brand Indicators for Message Identification |
-| TXT | `_dmarc` | `v=DMARC1; p=quarantine; ...` | DMARC Policy |
+Do not make manual changes in the Cloudflare dashboard.

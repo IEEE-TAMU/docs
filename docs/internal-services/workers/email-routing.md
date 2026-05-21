@@ -42,4 +42,6 @@ npm run list-email
 
 ## DNS Configuration
 
-For this worker to function, the domain's MX records must point to Cloudflare's email routing servers. See [DNS Configuration](../../infrastructure/cloudflare/dns.md#email-routing-inbound) for the specific records.
+For this worker to function, the domain's MX records must point to Cloudflare's email routing servers. DNS records are managed in the [infra repo](https://github.com/IEEE-TAMU/infra).
+
+See [DNS Configuration](../../infrastructure/cloudflare/dns.md) for an overview.

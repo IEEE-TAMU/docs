@@ -5,9 +5,9 @@
 ## Services Used
 
 ### DNS
-All DNS records for `ieeetamu.org` and `ieee-tamu.org` are managed through Cloudflare.
+All DNS records for `ieeetamu.org` are managed via Terraform/OpenTofu in the [infra](https://github.com/IEEE-TAMU/infra) repository.
 
-See [DNS Configuration](../infrastructure/cloudflare/dns.md) for specific records.
+See [DNS Configuration](../infrastructure/cloudflare/dns.md) for an overview.
 
 ### CDN & Proxy
 Cloudflare proxies traffic to our services, providing:

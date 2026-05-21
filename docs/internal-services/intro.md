@@ -15,6 +15,7 @@ Self-hosted applications deployed on our [Kubernetes cluster](../infrastructure/
 - **[Homepage](./apps/homepage.md)**: Main public website at ieeetamu.org.
 - **[Shlink](./apps/shlink.md)**: Link shortener service at link.ieeetamu.org.
 - **[Vaultwarden](./apps/vaultwarden.md)**: Password manager for officer accounts.
+- **[Mautic](./apps/mautic.md)**: Bulk email and marketing automation platform.
 
 ## Cloudflare Workers
 

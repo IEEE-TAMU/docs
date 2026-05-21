@@ -8,7 +8,7 @@ This section documents the foundational technical infrastructure of IEEE TAMU—
 
 ## Components
 
-- **[Cloudflare](./cloudflare/dns.md)**: DNS configuration for our domains.
+- **[Cloudflare DNS](./cloudflare/dns.md)**: DNS configuration managed via Terraform/OpenTofu in the [infra repo](https://github.com/IEEE-TAMU/infra).
 - **[Hardware](./hardware/nixos-cluster.md)**: Physical NixOS cluster hosted on campus.
 - **[Kubernetes](./kubernetes/cluster-setup.md)**: Cluster configuration and infrastructure services (Traefik, MariaDB, etc.).
 

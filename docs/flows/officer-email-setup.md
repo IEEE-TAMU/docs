@@ -92,7 +92,7 @@ When an officer leaves their role:
 | Issue | Solution |
 |-------|----------|
 | Verification email not received | Check spam folder; retry `npm run add-email` |
-| Emails not forwarding | Verify DNS MX records in [DNS Configuration](../infrastructure/cloudflare/dns.md) |
+| Emails not forwarding | Verify DNS MX records are configured in the [infra repo](https://github.com/IEEE-TAMU/infra) |
 | Emails going to spam | Check SPF/DKIM records for forwarded domains |
 
 ## Related Documentation
